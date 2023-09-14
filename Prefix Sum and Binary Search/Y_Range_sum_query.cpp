@@ -21,6 +21,6 @@ int main()
             sum+=a[i];
         }
         cout<<sum<<endl;
-    }
+    } // sushmoy
     return 0;
 }
