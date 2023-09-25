@@ -22,6 +22,8 @@ int main()
 
     cout<<a.val<<endl;
     //cout<<b.val<<endl; b.val=a.next
+    //derefence
+    //cout<<(*a.next).val<<endl;
     cout<<a.next->val<<endl;
     return 0;
 }
