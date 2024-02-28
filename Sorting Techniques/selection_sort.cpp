@@ -14,8 +14,7 @@ void SelectionSort(int ar[],int n)
             }
         }
         swap(ar[i],ar[k]);
-    }
-    
+    }  
 }
 
 int main()
@@ -30,7 +29,7 @@ int main()
     }
 
     SelectionSort(A,n);
-
+            
     cout<<"Sorted array: ";
     for (int i=0;i<n;i++)
     {
