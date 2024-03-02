@@ -24,18 +24,19 @@ void printLinkedList(Node* head)
     }
     cout << endl;
 }
-int add(Node *head)
+Node* Search(Node *head,int key)
 {
-    Node* tmp = head;
-    int sum=0;
-    while (tmp != NULL)
+    Node *tmp=head;
+    while(tmp !=NULL)
     {
-        sum=sum+tmp->val;
+        if(key==tmp->val)
+        {
+            return tmp;
+        }
         tmp=tmp->next;
     }
-    return sum;
+    return NULL;
 }
-
 int main() 
 {
     Node* head = new Node(10);
@@ -52,10 +53,20 @@ int main()
     // Print the linked list using the function
     printLinkedList(head);
 
-    // Sum of All element in linked list
+    // Searching
 
-    int addition= add(head);
-    cout<<addition<<endl;
-    
+    Node* mySearch=Search(head,30);
+
+    //cout<<mySearch->val<<endl;
+
+    if(mySearch)
+    {
+        cout<<"Key is Found "<<mySearch->val<<endl;
+    }
+    else
+    {
+        cout<<"key is not found";
+
+    }
     return 0;
 }

@@ -24,16 +24,20 @@ void printLinkedList(Node* head)
     }
     cout << endl;
 }
-int add(Node *head)
+
+int Max(Node *head)
 {
-    Node* tmp = head;
-    int sum=0;
-    while (tmp != NULL)
+    Node *tmp = head;
+    int max = INT_MIN; 
+    while(tmp != NULL)
     {
-        sum=sum+tmp->val;
-        tmp=tmp->next;
+        if(tmp->val > max)
+        {
+            max = tmp->val;
+        }
+        tmp = tmp->next;
     }
-    return sum;
+    return max;
 }
 
 int main() 
@@ -52,10 +56,9 @@ int main()
     // Print the linked list using the function
     printLinkedList(head);
 
-    // Sum of All element in linked list
-
-    int addition= add(head);
-    cout<<addition<<endl;
+    // Find maximum element in linked list
+    int maximum = Max(head);
+    cout << "Maximum element in linked list: " << maximum << endl;
     
     return 0;
 }
