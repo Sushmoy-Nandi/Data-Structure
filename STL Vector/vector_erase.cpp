@@ -2,15 +2,13 @@
 using namespace std;
 int main()
 {
-    vector<int>v={1,2,3,4,5}; // type v.erase()
-    // earse just one value
+    vector<int>v={1,2,3,4,5};
     //v.erase(v.begin()+3);
-    // earse more than value
-    //v.erase(v.begin()+1,v.begin()+4);
-    v.erase(v.begin()+1,v.end()-1);
+    v.erase(v.begin()+1,v.begin()+4);
+    //v.erase(v.begin()+1,v.end()-1);
     for(int x:v)
     {
-        cout<<x<<" ";
+        cout<<x<<" "; 
     }
     return 0;
 }
