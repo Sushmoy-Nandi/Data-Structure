@@ -11,7 +11,7 @@ class Node
         this->next=NULL;
        }
 };
-void insert_at_tail(Node *&head, int v)
+void insert_at_tail(Node *&head,int v)
 {
     Node *newNode =new Node(v);
     if(head==NULL)
@@ -20,18 +20,17 @@ void insert_at_tail(Node *&head, int v)
         return;
     }
     Node *tmp=head;
-    while (tmp->next!=NULL)
+    while(tmp->next != NULL)
     {
         tmp=tmp->next;
     }
-    // tmp ekhon last node a
-    tmp->next=newNode;
+    tmp->next=newNode; // tmp akn last node a
 }
-void print_Linked_list(Node *head)
+void print_linked_list(Node *head)
 {
-    cout<<"Your Linked List: ";
     Node *tmp=head;
-    while(tmp!=NULL)
+    cout<<"Your Linked List: ";
+    while(tmp !=NULL)
     {
         cout<<tmp->val<<" ";
         tmp=tmp->next;
@@ -44,25 +43,28 @@ int main()
     while(true)
     {
         cout<<"Option 1: Insert at Tail"<<endl;
-        cout<<"Option 2: Print Linked List"<<endl;
+        cout<<"Option 2: Print Linked list"<<endl;
         cout<<"Option 3: Terminate"<<endl;
+
         int op;
         cin>>op;
+
         if(op==1)
         {
-            cout<<"Please enter value :";
+            cout<<"Please enter value: ";
             int v;
             cin>>v;
             insert_at_tail(head,v);
         }
         else if(op==2)
         {
-            print_Linked_list(head);
+            print_linked_list(head);
         }
         else if(op==3)
         {
             break;
         }
     }
+    
     return 0;
 }
