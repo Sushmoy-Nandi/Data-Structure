@@ -21,7 +21,7 @@ int main()
         q.pop();
     }
 
-    cout << "QUEUE" << endl;
+    //cout << "QUEUE" << endl;
     while (!st.empty()) 
     {
         cout << st.top() << " ";

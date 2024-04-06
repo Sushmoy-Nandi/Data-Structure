@@ -14,7 +14,6 @@ int main()
         st.push(x);
     }
 
-    // Copying contents of st1 to newst
     while (!st.empty()) 
     {
         newst.push(st.top());   
@@ -22,7 +21,6 @@ int main()
     }
 
     cout << "STACK" << endl;
-    // Printing the contents of newst (which contains the reversed elements of st1)
     while (!newst.empty()) 
     {
         cout << newst.top() << " ";
