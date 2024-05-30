@@ -1,2 +1,2 @@
 
-    int pos,val;
+        this->next=NULL;

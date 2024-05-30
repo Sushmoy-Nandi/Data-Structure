@@ -17,7 +17,7 @@ public:
     Node *head = NULL;
     Node *tail = NULL;
     int sz = 0;
-    void push(int val)
+    void enqueue(int val)
     {
         sz++;
         Node *newNode = new Node(val);
@@ -30,7 +30,7 @@ public:
         tail->next = newNode;
         tail = tail->next;
     }
-    void pop()
+    void dequeue()
     {
         sz--;
         Node *deleteNode = head;
@@ -66,12 +66,12 @@ int main()
     {
         int x;
         cin >> x;
-        q.push(x);
+        q.enqueue(x);
     }
     while (!q.empty())
     {
         cout << q.front() << endl;
-        q.pop();
+        q.dequeue();
     }
     return 0;
 }

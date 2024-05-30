@@ -1,1 +1,1 @@
-Sorted array: 2 3 6 7 9 11 12 14 
+Sorted array: 10 20 30 40 50 
