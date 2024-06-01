@@ -1,1 +1,5 @@
-40 20 50 30 10 
+Size of Stack 5
+Stack Element
+50 40 30 20 10 
+After poping stack element: 
+40 30 20 10 

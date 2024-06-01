@@ -41,61 +41,43 @@ public:
             tail = NULL;
         }
     }
-    int front()
-    {
-        return head->val;
-    }
     int size()
     {
         return sz;
     }
-    bool empty()
+    bool isEmpty()
     {
         if (sz == 0)
             return true;
         else
             return false;
     }
+
     void printQueue()
     {
         Node *tmp = head;
         while (tmp != NULL)
         {
             cout << tmp->val << " ";
-            tmp=tmp->next;
+            tmp = tmp->next;
         }
-        cout<<endl;
+        cout << endl;
     }
 };
 int main()
 {
     myQueue q;
-    // int n;
-    // cin >> n;
-    // for (int i = 0; i < n; i++)
-    // {
-    //     int x;
-    //     cin >> x;
-    //     q.enqueue(x);
-    // }
-    // while (!q.empty())
-    // {
-    //     cout << q.front() << endl;
-    //     q.dequeue();
-    // }
-
     q.enqueue(10);
     q.enqueue(20);
     q.enqueue(30);
     q.enqueue(40);
     q.enqueue(50);
 
-    cout << "Number of elements in the queue: " << q.size() << endl;
-
-    cout << "Queue Elements:" << endl;
+    cout << "Size of Queue: " << q.size()<<endl;
+    cout << "Element of Queue:" << endl;
     q.printQueue();
 
-    cout << "After poping Queue Elements:" << endl;
+    cout<<"After deleting queue element"<<endl;
     q.dequeue();
     q.printQueue();
 
