@@ -5,21 +5,19 @@ class Node
 public:
     int val;
     Node *next;
-    Node *prev;
     Node(int val)
     {
         this->val = val;
         this->next = NULL;
-        this->prev = NULL;
     }
 };
-class myStack
+class myQueue
 {
 public:
     Node *head = NULL;
     Node *tail = NULL;
     int sz = 0;
-    void push(int val)
+    void enqueue(int val)
     {
         sz++;
         Node *newNode = new Node(val);
@@ -29,29 +27,23 @@ public:
             tail = newNode;
             return;
         }
-        newNode->prev = tail;
         tail->next = newNode;
         tail = tail->next;
     }
-    void pop()
+    void dequeue()
     {
         sz--;
-        Node *deleteNode = tail;
-        tail = tail->prev;
-        if (tail == NULL)
-        {
-            head = NULL;
-        }
-        else
-        {
-            tail->next = NULL;
-        }
-
+        Node *deleteNode = head;
+        head = head->next;
         delete deleteNode;
+        if (head == NULL)
+        {
+            tail = NULL;
+        }
     }
-    int top()
+    int front()
     {
-        return tail->val;
+        return head->val;
     }
     int size()
     {
@@ -64,56 +56,48 @@ public:
         else
             return false;
     }
-
-    void printStack() 
+    void printQueue()
     {
-        Node* tmp = tail;
-        while (tmp != NULL) {
+        Node *tmp = head;
+        while (tmp != NULL)
+        {
             cout << tmp->val << " ";
-            tmp = tmp->prev;
+            tmp=tmp->next;
         }
-        cout << endl;
+        cout<<endl;
     }
 };
 int main()
 {
-    myStack st;
+    myQueue q;
     // int n;
     // cin >> n;
     // for (int i = 0; i < n; i++)
     // {
     //     int x;
     //     cin >> x;
-    //     st.push(x);
+    //     q.enqueue(x);
     // }
-    // while (!st.empty())
+    // while (!q.empty())
     // {
-    //     cout << st.top() << endl;
-    //     st.pop();
+    //     cout << q.front() << endl;
+    //     q.dequeue();
     // }
-    
-    st.push(10);
-    st.push(20);
-    st.push(30);
-    st.push(40);
-    st.push(50);
 
-    cout << "Number of elements in the stack: " << st.size() << endl;
+    q.enqueue(10);
+    q.enqueue(20);
+    q.enqueue(30);
+    q.enqueue(40);
+    q.enqueue(50);
 
-    // cout << "Stack Elements:" << endl;
-    // while (!st.empty()) {
-    //     cout << st.top() << endl;
-    //     st.pop();
-    // }
+    cout << "Number of elements in the queue: " << q.size() << endl;
 
     cout << "Stack Elements:" << endl;
-    st.printStack();
+    q.printQueue();
 
     cout << "After poping Stack Elements:" << endl;
-    st.pop();
-    st.pop();
-    st.printStack();
-
+    q.dequeue();
+    q.printQueue();
 
     return 0;
 }

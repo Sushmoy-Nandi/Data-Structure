@@ -1,5 +1,1 @@
-Number of elements in the stack: 5
-Stack Elements:
-50 40 30 20 10 
-After poping Stack Elements:
-30 20 10 
+40 20 50 30 10 
