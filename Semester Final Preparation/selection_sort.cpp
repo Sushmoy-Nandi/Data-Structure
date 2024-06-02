@@ -4,7 +4,7 @@ void SelectionSort(int ar[],int n){
     int i,j,k;
     for(i=0;i<n-1;i++){
         for(j=k=i;j<n;j++){
-            if(ar[j]<ar[k]){
+            if(ar[j]>ar[k]){
                 k=j;
             }
         }
